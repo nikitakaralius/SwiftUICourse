@@ -16,6 +16,7 @@
 		8530279428F328FD001D210F /* FrameworkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8530279328F328FD001D210F /* FrameworkDetailView.swift */; };
 		8530279628F32D30001D210F /* AFButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8530279528F32D30001D210F /* AFButtonLabel.swift */; };
 		8530279828F33542001D210F /* FrameworksGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8530279728F33542001D210F /* FrameworksGridViewModel.swift */; };
+		8530279A28F33E17001D210F /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8530279928F33E17001D210F /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		8530279328F328FD001D210F /* FrameworkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkDetailView.swift; sourceTree = "<group>"; };
 		8530279528F32D30001D210F /* AFButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFButtonLabel.swift; sourceTree = "<group>"; };
 		8530279728F33542001D210F /* FrameworksGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworksGridViewModel.swift; sourceTree = "<group>"; };
+		8530279928F33E17001D210F /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				8530278F28F31E3D001D210F /* Framework.swift */,
 				8530278328F31D3A001D210F /* Assets.xcassets */,
 				8530278528F31D3A001D210F /* Preview Content */,
+				8530279928F33E17001D210F /* SafariView.swift */,
 			);
 			path = AppleFrameworks;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				8530279628F32D30001D210F /* AFButtonLabel.swift in Sources */,
 				8530279828F33542001D210F /* FrameworksGridViewModel.swift in Sources */,
 				8530279428F328FD001D210F /* FrameworkDetailView.swift in Sources */,
+				8530279A28F33E17001D210F /* SafariView.swift in Sources */,
 				8530279028F31E3D001D210F /* Framework.swift in Sources */,
 				8530278E28F31DCC001D210F /* FrameworksGridView.swift in Sources */,
 				8530279228F31FB3001D210F /* FrameworkTitleView.swift in Sources */,

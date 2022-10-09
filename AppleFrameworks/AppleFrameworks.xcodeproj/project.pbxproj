@@ -11,6 +11,7 @@
 		8530278428F31D3A001D210F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8530278328F31D3A001D210F /* Assets.xcassets */; };
 		8530278728F31D3A001D210F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8530278628F31D3A001D210F /* Preview Assets.xcassets */; };
 		8530278E28F31DCC001D210F /* FrameworksGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8530278D28F31DCC001D210F /* FrameworksGridView.swift */; };
+		8530279028F31E3D001D210F /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8530278F28F31E3D001D210F /* Framework.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		8530278328F31D3A001D210F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8530278628F31D3A001D210F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8530278D28F31DCC001D210F /* FrameworksGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworksGridView.swift; sourceTree = "<group>"; };
+		8530278F28F31E3D001D210F /* Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				8530277F28F31D3A001D210F /* AppleFrameworksApp.swift */,
 				8530278D28F31DCC001D210F /* FrameworksGridView.swift */,
+				8530278F28F31E3D001D210F /* Framework.swift */,
 				8530278328F31D3A001D210F /* Assets.xcassets */,
 				8530278528F31D3A001D210F /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8530278028F31D3A001D210F /* AppleFrameworksApp.swift in Sources */,
+				8530279028F31E3D001D210F /* Framework.swift in Sources */,
 				8530278E28F31DCC001D210F /* FrameworksGridView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

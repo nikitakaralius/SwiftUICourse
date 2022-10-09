@@ -1,8 +1,18 @@
 import SwiftUI
 
 struct FrameworksGridView: View {
+    let columns: [GridItem] = Array(repeating: GridItem(.flexible()),
+                                    count: 3)
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        LazyVGrid(columns: columns) {
+            FrameworkTitleView(framework: MockData.sampleFramework)
+            FrameworkTitleView(framework: MockData.sampleFramework)
+            FrameworkTitleView(framework: MockData.sampleFramework)
+            FrameworkTitleView(framework: MockData.sampleFramework)
+            FrameworkTitleView(framework: MockData.sampleFramework)
+            FrameworkTitleView(framework: MockData.sampleFramework)
+        }
     }
 }
 

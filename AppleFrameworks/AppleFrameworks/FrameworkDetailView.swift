@@ -9,26 +9,18 @@ struct FrameworkDetailView: View {
             FrameworkTitleView(framework: framework)
             Text(framework.description)
                 .padding()
-                .font(.caption)
-                .fontWeight(.semibold)
+                .font(.body)
             Spacer()
             Button {
                 
             } label: {
-                Text("Learn More")
-                    .font(.title2)
-                    .bold()
-                    .frame(width: 280, height: 50)
-                    .foregroundColor(.white)
-                    .background(Color.red)
-                    .cornerRadius(10)
+                AFButtonLabel(title: "Learn More")
             }
-            Spacer()
         }
     }
 }
 
-struct FrameworkView_Previews: PreviewProvider {
+struct FrameworkDetailView_Previews: PreviewProvider {
     static var previews: some View {
         FrameworkDetailView(framework: MockData.sampleFramework)
     }

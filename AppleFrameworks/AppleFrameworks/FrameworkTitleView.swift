@@ -1,0 +1,27 @@
+import SwiftUI
+
+struct FrameworkTitleView: View {
+    let framework: Framework
+    
+    var body: some View {
+        VStack {
+            Image(framework.imageName)
+                .resizable()
+                .frame(width: 90, height: 90)
+                .aspectRatio(contentMode: .fit)
+            
+            Text(framework.name)
+                .font(.title2)
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+                .scaledToFit()
+                .minimumScaleFactor(0.6)
+        }
+    }
+}
+
+struct FrameworkViewTitle_Previews: PreviewProvider {
+    static var previews: some View {
+        FrameworkTitleView(framework: MockData.sampleFramework)
+    }
+}

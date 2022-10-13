@@ -31,15 +31,7 @@ final class ScannerVC: UIViewController {
     }
     
     private func receiveVideoInput() {
-        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
-            scannerDelegate?.didSurface(error: .invalidDeviceInput)
-            return
-        }
-        
-        let videoInput: AVCaptureDeviceInput
-        do {
-            try videoInput = AVCaptureDeviceInput(device: videoCaptureDevice)
-        } catch {
+        guard let videoInput = receiveVideoCaptureDeviceInput() else {
             scannerDelegate?.didSurface(error: .invalidDeviceInput)
             return
         }
@@ -50,6 +42,11 @@ final class ScannerVC: UIViewController {
             scannerDelegate?.didSurface(error: .invalidDeviceInput)
             return
         }
+    }
+    
+    private func receiveVideoCaptureDeviceInput() -> AVCaptureDeviceInput? {
+        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return nil }
+        return try? AVCaptureDeviceInput(device: videoCaptureDevice)
     }
     
     private func scanForBarcodes() {

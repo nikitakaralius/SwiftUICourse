@@ -2,13 +2,22 @@ import SwiftUI
 
 struct AppetizersTabView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView {
+           AppetizersDishesView()
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            
+            AccountView()
+                .tabItem {
+                    Label("Account", systemImage: "person")
+                }
+
+            OrderView()
+                .tabItem {
+                    Label("Order", systemImage: "bag")
+                }
         }
-        .padding()
     }
 }
 

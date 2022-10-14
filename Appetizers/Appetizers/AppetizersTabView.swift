@@ -3,7 +3,7 @@ import SwiftUI
 struct AppetizersTabView: View {
     var body: some View {
         TabView {
-           AppetizersDishesView()
+            AppetizersDishesView(appetizers: MockData.appetizers)
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
@@ -21,7 +21,7 @@ struct AppetizersTabView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct AppetizersTabView_Previews: PreviewProvider {
     static var previews: some View {
         AppetizersTabView()
     }

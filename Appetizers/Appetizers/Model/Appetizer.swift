@@ -1,6 +1,6 @@
 import Foundation
 
-struct Appetizer: Decodable {
+struct Appetizer: Identifiable, Decodable {
     let id: Int
     let name: String
     let description: String

@@ -1,12 +1,13 @@
 import SwiftUI
 
-struct AppetizerCardView: View {
+struct AppetizerCellView: View {
     let appetizer: Appetizer
     
     var body: some View {
         HStack(spacing: 20) {
            Image("asian-flank-steak")
                 .resizable()
+                .frame(width: 130, height: 115)
                 .cornerRadius(20)
                 .aspectRatio(contentMode: .fit)
             
@@ -20,12 +21,11 @@ struct AppetizerCardView: View {
                     .foregroundColor(.gray)
             }
         }
-        .padding()
     }
 }
 
 struct AppetizerPreviewView_Previews: PreviewProvider {
     static var previews: some View {
-        AppetizerCardView(appetizer: MockData.sampleAppetizer)
+        AppetizerCellView(appetizer: MockData.sampleAppetizer)
     }
 }

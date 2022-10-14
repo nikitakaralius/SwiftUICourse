@@ -4,7 +4,7 @@ struct FrameworkDetailView: View {
     let framework: Framework
     @Binding var isShowingDetailView: Bool
     @State var isShowingSafariView = false
-    
+
     var body: some View {
         VStack {
             DismissButton(isShowing: $isShowingDetailView)

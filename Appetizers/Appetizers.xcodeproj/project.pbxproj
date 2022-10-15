@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		853DA92128FAF02A00091CDE /* AppetizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DA92028FAF02A00091CDE /* AppetizerService.swift */; };
 		853DA92328FAF58200091CDE /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DA92228FAF58200091CDE /* Endpoints.swift */; };
+		853DA92628FB278800091CDE /* AppetizerDishesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DA92528FB278800091CDE /* AppetizerDishesViewModel.swift */; };
 		85606EDC28F9BF820099609C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85606EDB28F9BF820099609C /* Color.swift */; };
 		85606EDF28F9D8240099609C /* Appetizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85606EDE28F9D8240099609C /* Appetizer.swift */; };
 		85606EE128F9D9160099609C /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85606EE028F9D9160099609C /* MockData.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		853DA92028FAF02A00091CDE /* AppetizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerService.swift; sourceTree = "<group>"; };
 		853DA92228FAF58200091CDE /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		853DA92528FB278800091CDE /* AppetizerDishesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerDishesViewModel.swift; sourceTree = "<group>"; };
 		85606EDB28F9BF820099609C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		85606EDE28F9D8240099609C /* Appetizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appetizer.swift; sourceTree = "<group>"; };
 		85606EE028F9D9160099609C /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
@@ -57,6 +59,15 @@
 				853DA92028FAF02A00091CDE /* AppetizerService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		853DA92428FB277800091CDE /* AppetizerDishes */ = {
+			isa = PBXGroup;
+			children = (
+				85AA3E6B28F9BAE4001A1EC4 /* AppetizersDishesView.swift */,
+				853DA92528FB278800091CDE /* AppetizerDishesViewModel.swift */,
+			);
+			path = AppetizerDishes;
 			sourceTree = "<group>";
 		};
 		85606EDA28F9BF750099609C /* Utilities */ = {
@@ -127,7 +138,7 @@
 		85AA3E6D28F9BAF8001A1EC4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				85AA3E6B28F9BAE4001A1EC4 /* AppetizersDishesView.swift */,
+				853DA92428FB277800091CDE /* AppetizerDishes */,
 				85AA3E6E28F9BB25001A1EC4 /* AccountView.swift */,
 				85AA3E7028F9BB36001A1EC4 /* OrderView.swift */,
 			);
@@ -205,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				853DA92128FAF02A00091CDE /* AppetizerService.swift in Sources */,
+				853DA92628FB278800091CDE /* AppetizerDishesViewModel.swift in Sources */,
 				85AA3E6F28F9BB25001A1EC4 /* AccountView.swift in Sources */,
 				85AA3E6028F9B994001A1EC4 /* AppetizersTabView.swift in Sources */,
 				853DA92328FAF58200091CDE /* Endpoints.swift in Sources */,

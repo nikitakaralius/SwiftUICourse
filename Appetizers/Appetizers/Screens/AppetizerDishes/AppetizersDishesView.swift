@@ -13,6 +13,11 @@ struct AppetizersDishesView: View {
         .onAppear {
             viewModel.loadAppetizers()
         }
+        .alert(item: $viewModel.alert) { alert in
+            Alert(title: alert.title,
+                  message: alert.message,
+                  dismissButton: alert.dismissButton)
+        }
     }
 }
 

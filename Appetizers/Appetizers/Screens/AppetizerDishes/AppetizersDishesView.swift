@@ -5,10 +5,19 @@ struct AppetizersDishesView: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.appetizers, rowContent: { appetizer in
-                AppetizerCellView(appetizer: appetizer)
-            })
-            .navigationTitle("🥗 Dishes")
+            ZStack {
+                if viewModel.isLoading {
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                        .tint(.brandPrimary)
+                        .scaleEffect(1.3)
+                }
+
+                List(viewModel.appetizers, rowContent: { appetizer in
+                    AppetizerCellView(appetizer: appetizer)
+                })
+                .navigationTitle("🥗 Dishes")
+            }
         }
         .onAppear {
             viewModel.loadAppetizers()

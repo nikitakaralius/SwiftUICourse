@@ -1,15 +1,16 @@
 import SwiftUI
 
 final class AppetizerDishesViewModel: ObservableObject {
-    @Published var appetizers: [Appetizer] = []
-    @Published var isPresentingAlert = false
-    @Published var alert: AlertDescription? {
+    @Published var appetizers: [Appetizer] = [] {
         didSet {
-            isPresentingAlert = true
+            isLoading = false
         }
     }
+    @Published var alert: AlertDescription?
+    @Published var isLoading = false
     
     func loadAppetizers(using service: AppetizerService = .shared) {
+        isLoading = true
         service.getAppetizers { result in
             DispatchQueue.main.async { [self] in
                 switch result {

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AppetizersDishesView: View {
-    @StateObject var viewModel = AppetizerDishesViewModel()
+    @StateObject private var viewModel = AppetizerDishesViewModel()
     
     var body: some View {
         NavigationView {

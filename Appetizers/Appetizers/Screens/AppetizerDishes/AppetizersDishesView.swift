@@ -5,14 +5,12 @@ struct AppetizersDishesView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
-                if viewModel.isLoading {
-                    ProgressView()
-                        .progressViewStyle(.circular)
-                        .tint(.brandPrimary)
-                        .scaleEffect(1.3)
-                }
-
+            if viewModel.isLoading {
+                ProgressView()
+                    .progressViewStyle(.circular)
+                    .tint(.brandPrimary)
+                    .scaleEffect(1.3)
+            } else {
                 List(viewModel.appetizers, rowContent: { appetizer in
                     AppetizerCellView(appetizer: appetizer)
                 })

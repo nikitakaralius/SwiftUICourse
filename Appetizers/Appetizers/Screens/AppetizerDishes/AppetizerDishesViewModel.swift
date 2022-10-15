@@ -1,11 +1,7 @@
 import SwiftUI
 
 final class AppetizerDishesViewModel: ObservableObject {
-    @Published var appetizers: [Appetizer] = [] {
-        didSet {
-            isLoading = false
-        }
-    }
+    @Published var appetizers: [Appetizer] = []
     @Published var alert: AlertDescription?
     @Published var isLoading = false
     
@@ -19,6 +15,7 @@ final class AppetizerDishesViewModel: ObservableObject {
                 case .failure(let error):
                     assignAlertDescription(from: error)
                 }
+                isLoading = false
             }
         }
     }

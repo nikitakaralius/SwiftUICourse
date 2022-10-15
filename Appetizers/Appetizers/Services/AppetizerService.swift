@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 fileprivate struct GetAppetizersResponse: Decodable {
     let request: [Appetizer]
@@ -12,6 +13,9 @@ final class AppetizerService {
     }
     
     typealias GetAppetizersHandler = (Result<[Appetizer], APIError>) -> Void
+    typealias LoadImageHandler = (UIImage?) -> Void
+    
+    private let imageCache = NSCache<NSString, UIImage>()
     
     private init() {}
     
@@ -43,6 +47,34 @@ final class AppetizerService {
             } catch {
                 complete(.failure(.invalidData))
             }
+        }
+        
+        task.resume()
+    }
+    
+    func loadImage(from url: String,
+                   then complete: @escaping LoadImageHandler,
+                   using session: URLSession = .shared) {
+        
+        let imageKey = NSString(string: url)
+        
+        if let image = imageCache.object(forKey: imageKey) {
+            complete(image)
+            return
+        }
+        
+        guard let url = URL(string: url) else {
+            complete(nil)
+            return
+        }
+        
+        let task = session.dataTask(with: url) { data, _, _ in
+            guard let data = data, let image = UIImage(data: data) else {
+                complete(nil)
+                return
+            }
+            self.imageCache.setObject(image, forKey: imageKey)
+            complete(image)
         }
         
         task.resume()

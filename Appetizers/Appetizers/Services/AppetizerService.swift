@@ -20,13 +20,14 @@ final class AppetizerService {
     func getAppetizers(then complete: @escaping GetAppetizersHandler,
                        using session: URLSession = .shared) {
         let task = session.dataTask(with: .appetizers) { data, response, error in
-            guard error != nil else {
+            guard error == nil else {
                 complete(.failure(.unableToComplete))
                 return
             }
             
             guard let response = response as? HTTPURLResponse,
                   response.statusCode == 200 else {
+                print((response as? HTTPURLResponse)?.statusCode)
                 complete(.failure(.invalidResponse))
                 return
             }

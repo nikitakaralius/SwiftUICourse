@@ -3,7 +3,7 @@ import SwiftUI
 struct AppetizersTabView: View {
     var body: some View {
         TabView {
-            AppetizersDishesView(appetizers: MockData.appetizers)
+            AppetizersDishesView()
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }

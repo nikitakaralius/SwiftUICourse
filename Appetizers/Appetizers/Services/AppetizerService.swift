@@ -27,7 +27,6 @@ final class AppetizerService {
             
             guard let response = response as? HTTPURLResponse,
                   response.statusCode == 200 else {
-                print((response as? HTTPURLResponse)?.statusCode)
                 complete(.failure(.invalidResponse))
                 return
             }

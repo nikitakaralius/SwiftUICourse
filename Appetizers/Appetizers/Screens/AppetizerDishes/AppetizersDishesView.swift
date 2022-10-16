@@ -4,9 +4,9 @@ struct AppetizersDishesView: View {
     @StateObject private var viewModel = AppetizerDishesViewModel()
     
     var body: some View {
-        NavigationView {
-            AppetizersLoader(isLoading: $viewModel.isLoading) {
-                ZStack {
+        AppetizersLoader(isLoading: $viewModel.isLoading) {
+            ZStack {
+                NavigationView {
                     List(viewModel.appetizers) { appetizer in
                         AppetizerCellView(appetizer: appetizer)
                             .onTapGesture {
@@ -15,14 +15,15 @@ struct AppetizersDishesView: View {
                     }
                     .listStyle(.plain)
                     .disabled(viewModel.isShowingDetail)
-                    .blur(radius: viewModel.blurRadius)
                     .navigationTitle("🥗 Dishes")
-                    
-                    if viewModel.isShowingDetail {
-                        AppetizerDetailView(
-                            isShowing: $viewModel.isShowingDetail,
-                            appetizer: viewModel.selectedAppetizer)
-                    }
+                }
+                .blur(radius: viewModel.blurRadius)
+                .navigationViewStyle(.stack)
+                
+                if viewModel.isShowingDetail {
+                    AppetizerDetailView(
+                        isShowing: $viewModel.isShowingDetail,
+                        appetizer: viewModel.selectedAppetizer)
                 }
             }
         }

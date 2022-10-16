@@ -13,8 +13,8 @@ struct AppetizerDetailView: View {
             Spacer()
             OrderButton(for: appetizer)
         }
-        .cardStyle()
-        .hasCloseButton(at: .topTrailing, controls: $isShowing)
+        .card()
+        .withCloseButton(at: .topTrailing, controls: $isShowing)
     }
 }
 
@@ -94,7 +94,7 @@ fileprivate struct OrderButton: View {
 }
 
 fileprivate extension View {
-    func cardStyle() -> some View {
+    func card() -> some View {
         return self.frame(width: 300, height: 525)
             .background(Color.systemBackground)
             .cornerRadius(12)
@@ -103,7 +103,7 @@ fileprivate extension View {
 }
 
 fileprivate extension View {
-    func hasCloseButton(at alignment: Alignment, controls isShowing: Binding<Bool>) -> some View {
+    func withCloseButton(at alignment: Alignment, controls isShowing: Binding<Bool>) -> some View {
         return self.overlay(alignment: .topTrailing) {
             Button {
                 isShowing.wrappedValue = false

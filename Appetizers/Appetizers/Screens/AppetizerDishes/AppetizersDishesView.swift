@@ -4,28 +4,26 @@ struct AppetizersDishesView: View {
     @StateObject private var viewModel = AppetizerDishesViewModel()
     
     var body: some View {
-        ZStack {
-            NavigationView {
-                List(viewModel.appetizers) { appetizer in
-                    AppetizerCellView(appetizer: appetizer)
-                        .onTapGesture {
-                            viewModel.selectedAppetizer = appetizer
-                        }
+        NavigationView {
+            AppetizersLoader(isLoading: $viewModel.isLoading) {
+                ZStack {
+                    List(viewModel.appetizers) { appetizer in
+                        AppetizerCellView(appetizer: appetizer)
+                            .onTapGesture {
+                                viewModel.selectedAppetizer = appetizer
+                            }
+                    }
+                    .listStyle(.plain)
+                    .disabled(viewModel.isShowingDetail)
+                    .blur(radius: viewModel.blurRadius)
+                    .navigationTitle("🥗 Dishes")
+                    
+                    if viewModel.isShowingDetail {
+                        AppetizerDetailView(
+                            isShowing: $viewModel.isShowingDetail,
+                            appetizer: viewModel.selectedAppetizer)
+                    }
                 }
-                .listStyle(.plain)
-                .disabled(viewModel.isShowingDetail)
-                .navigationTitle("🥗 Dishes")
-            }
-            .blur(radius: viewModel.blurRadius)
-            
-            if viewModel.isShowingDetail {
-                AppetizerDetailView(
-                    isShowing: $viewModel.isShowingDetail,
-                    appetizer: viewModel.selectedAppetizer)
-            }
-            
-            if viewModel.isLoading {
-                AppetizersProgressView()
             }
         }
         .onAppear {

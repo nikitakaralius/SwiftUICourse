@@ -78,6 +78,9 @@
 			children = (
 				85AA3E6B28F9BAE4001A1EC4 /* AppetizersDishesView.swift */,
 				853DA92528FB278800091CDE /* AppetizerDishesViewModel.swift */,
+				85606EE328F9DFD20099609C /* AppetizerCellView.swift */,
+				858A24E128FBF7A40004E3D3 /* AppetizerRemoteImage.swift */,
+				85EA83D628FC06F0006498B3 /* AppetizerDetailView.swift */,
 			);
 			path = AppetizerDishes;
 			sourceTree = "<group>";
@@ -102,12 +105,8 @@
 		85606EE228F9DFB50099609C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				85606EE328F9DFD20099609C /* AppetizerCellView.swift */,
-				858A24E128FBF7A40004E3D3 /* AppetizerRemoteImage.swift */,
-				85EA83D628FC06F0006498B3 /* AppetizerDetailView.swift */,
-				85EA83D828FC118D006498B3 /* AppetizerButtonLabel.swift */,
-				85EA83DA28FC1F66006498B3 /* AppetizersProgressView.swift */,
-				85EA83DC28FC3000006498B3 /* CloseButtonLabel.swift */,
+				85EA83DE28FC34F9006498B3 /* Buttons */,
+				85EA83DF28FC350F006498B3 /* Progress */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,10 +154,10 @@
 		85AA3E5C28F9B994001A1EC4 /* Appetizers */ = {
 			isa = PBXGroup;
 			children = (
-				853DA91F28FAF01F00091CDE /* Services */,
-				85606EE228F9DFB50099609C /* Views */,
-				85606EDD28F9D8190099609C /* Model */,
 				85606EDA28F9BF750099609C /* Utilities */,
+				853DA91F28FAF01F00091CDE /* Services */,
+				85606EDD28F9D8190099609C /* Model */,
+				85606EE228F9DFB50099609C /* Views */,
 				85AA3E6D28F9BAF8001A1EC4 /* Screens */,
 				85AA3E5D28F9B994001A1EC4 /* AppetizersApp.swift */,
 				85AA3E6128F9B995001A1EC4 /* Assets.xcassets */,
@@ -185,6 +184,23 @@
 				858A24E328FBFC920004E3D3 /* Account */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		85EA83DE28FC34F9006498B3 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				85EA83D828FC118D006498B3 /* AppetizerButtonLabel.swift */,
+				85EA83DC28FC3000006498B3 /* CloseButtonLabel.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		85EA83DF28FC350F006498B3 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				85EA83DA28FC1F66006498B3 /* AppetizersProgressView.swift */,
+			);
+			path = Progress;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

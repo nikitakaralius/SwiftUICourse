@@ -31,5 +31,8 @@ struct AppetizerRemoteImage: View {
         ImageWithPlaceholder(
             targetImage: imageLoader.loadedImage,
             placeholder: Image("food-placeholder"))
+        .onAppear {
+            imageLoader.load(from: imageURL)
+        }
     }
 }

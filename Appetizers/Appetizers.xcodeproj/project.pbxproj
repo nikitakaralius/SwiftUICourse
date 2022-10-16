@@ -23,6 +23,8 @@
 		85AA3E6C28F9BAE4001A1EC4 /* AppetizersDishesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AA3E6B28F9BAE4001A1EC4 /* AppetizersDishesView.swift */; };
 		85AA3E6F28F9BB25001A1EC4 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AA3E6E28F9BB25001A1EC4 /* AccountView.swift */; };
 		85AA3E7128F9BB36001A1EC4 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AA3E7028F9BB36001A1EC4 /* OrderView.swift */; };
+		85EA83D728FC06F0006498B3 /* AppetizerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EA83D628FC06F0006498B3 /* AppetizerCardView.swift */; };
+		85EA83D928FC118D006498B3 /* AppetizerButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EA83D828FC118D006498B3 /* AppetizerButtonLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		85AA3E6B28F9BAE4001A1EC4 /* AppetizersDishesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizersDishesView.swift; sourceTree = "<group>"; };
 		85AA3E6E28F9BB25001A1EC4 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		85AA3E7028F9BB36001A1EC4 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		85EA83D628FC06F0006498B3 /* AppetizerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerCardView.swift; sourceTree = "<group>"; };
+		85EA83D828FC118D006498B3 /* AppetizerButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerButtonLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			children = (
 				85606EE328F9DFD20099609C /* AppetizerCellView.swift */,
 				858A24E128FBF7A40004E3D3 /* AppetizerRemoteImage.swift */,
+				85EA83D628FC06F0006498B3 /* AppetizerCardView.swift */,
+				85EA83D828FC118D006498B3 /* AppetizerButtonLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,9 +256,11 @@
 				853DA92628FB278800091CDE /* AppetizerDishesViewModel.swift in Sources */,
 				85AA3E6F28F9BB25001A1EC4 /* AccountView.swift in Sources */,
 				85AA3E6028F9B994001A1EC4 /* AppetizersTabView.swift in Sources */,
+				85EA83D928FC118D006498B3 /* AppetizerButtonLabel.swift in Sources */,
 				853DA92328FAF58200091CDE /* Endpoints.swift in Sources */,
 				85606EE428F9DFD20099609C /* AppetizerCellView.swift in Sources */,
 				85AA3E6C28F9BAE4001A1EC4 /* AppetizersDishesView.swift in Sources */,
+				85EA83D728FC06F0006498B3 /* AppetizerCardView.swift in Sources */,
 				85AA3E5E28F9B994001A1EC4 /* AppetizersApp.swift in Sources */,
 				853DA92A28FB2D9200091CDE /* Alerts.swift in Sources */,
 				85606EDF28F9D8240099609C /* Appetizer.swift in Sources */,

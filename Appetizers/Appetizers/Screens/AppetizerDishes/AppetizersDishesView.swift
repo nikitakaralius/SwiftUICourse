@@ -4,17 +4,28 @@ struct AppetizersDishesView: View {
     @StateObject private var viewModel = AppetizerDishesViewModel()
     
     var body: some View {
-        NavigationView {
-            if viewModel.isLoading {
-                ProgressView()
-                    .progressViewStyle(.circular)
-                    .tint(.brandPrimary)
-                    .scaleEffect(1.3)
-            } else {
-                List(viewModel.appetizers, rowContent: { appetizer in
+        ZStack {
+            NavigationView {
+                List(viewModel.appetizers) { appetizer in
                     AppetizerCellView(appetizer: appetizer)
-                })
+                        .onTapGesture {
+                            viewModel.selectedAppetizer = appetizer
+                        }
+                }
+                .listStyle(.plain)
+                .disabled(viewModel.isShowingDetail)
                 .navigationTitle("🥗 Dishes")
+            }
+            .blur(radius: viewModel.blurRadius)
+            
+            if viewModel.isShowingDetail {
+                AppetizerDetailView(
+                    isShowing: $viewModel.isShowingDetail,
+                    appetizer: viewModel.selectedAppetizer)
+            }
+            
+            if viewModel.isLoading {
+                AppetizersProgressView()
             }
         }
         .onAppear {

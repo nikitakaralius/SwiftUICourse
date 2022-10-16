@@ -100,6 +100,30 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		858A24E328FBFC920004E3D3 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				85AA3E6E28F9BB25001A1EC4 /* AccountView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		858A24E428FBFC9D0004E3D3 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				85AA3E7028F9BB36001A1EC4 /* OrderView.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		858A24E528FBFCB60004E3D3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				85AA3E5F28F9B994001A1EC4 /* AppetizersTabView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		85AA3E5128F9B994001A1EC4 = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +149,6 @@
 				85606EDA28F9BF750099609C /* Utilities */,
 				85AA3E6D28F9BAF8001A1EC4 /* Screens */,
 				85AA3E5D28F9B994001A1EC4 /* AppetizersApp.swift */,
-				85AA3E5F28F9B994001A1EC4 /* AppetizersTabView.swift */,
 				85AA3E6128F9B995001A1EC4 /* Assets.xcassets */,
 				85AA3E6328F9B995001A1EC4 /* Preview Content */,
 			);
@@ -144,9 +167,10 @@
 		85AA3E6D28F9BAF8001A1EC4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				858A24E528FBFCB60004E3D3 /* Main */,
 				853DA92428FB277800091CDE /* AppetizerDishes */,
-				85AA3E6E28F9BB25001A1EC4 /* AccountView.swift */,
-				85AA3E7028F9BB36001A1EC4 /* OrderView.swift */,
+				858A24E428FBFC9D0004E3D3 /* Order */,
+				858A24E328FBFC920004E3D3 /* Account */,
 			);
 			path = Screens;
 			sourceTree = "<group>";

@@ -13,7 +13,11 @@ struct AccountView: View {
                         .keyboardType(.emailAddress)
                         .autocorrectionDisabled()
                         .textInputAutocapitalization(.never)
-                    DatePicker("Birthdate", selection: $viewModel.user.birthdate, displayedComponents: .date)
+                    DatePicker("Birthdate",
+                               selection: $viewModel.user.birthdate,
+                               in: Date().oneHundredTenYearsAgo...Date().fourteenYearsAgo,
+                               displayedComponents: .date)
+                    
                     Button("Save Changes") {
                         DispatchQueue.main.async {
                             viewModel.saveChanges()

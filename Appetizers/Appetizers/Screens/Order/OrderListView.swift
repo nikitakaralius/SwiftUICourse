@@ -53,6 +53,7 @@ struct OrderListView: View {
                 .font(.title3)
                 .fontWeight(.semibold)
                 .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
         }
     }
     

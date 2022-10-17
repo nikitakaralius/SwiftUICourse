@@ -84,8 +84,10 @@ fileprivate struct OrderButton: View {
     
     var body: some View {
         Button {
-            order.add(appetizer)
-            isShowingDetailView = false
+            withAnimation {
+                order.add(appetizer)
+                isShowingDetailView = false
+            }
         } label: {
             AppetizerButtonLabel("$\(appetizer.price.formatted()) -  Add to Order")
         }

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AppetizersDishesView: View {
-    @StateObject private var viewModel = AppetizerDishesViewModel()
+    @ObservedObject var viewModel: AppetizerDishesViewModel
     
     var body: some View {
         AppetizersLoader(isLoading: $viewModel.isLoading) {
@@ -27,9 +27,6 @@ struct AppetizersDishesView: View {
                 }
             }
         }
-        .onAppear {
-            viewModel.loadAppetizers()
-        }
         .alert(item: $viewModel.alert) { alert in
             Alert(title: alert.title,
                   message: alert.message,
@@ -40,6 +37,6 @@ struct AppetizersDishesView: View {
 
 struct AppetizersDishesView_Previews: PreviewProvider {
     static var previews: some View {
-        AppetizersDishesView()
+        AppetizersDishesView(viewModel: AppetizerDishesViewModel())
     }
 }

@@ -1,9 +1,11 @@
 import SwiftUI
 
 struct AppetizersTabView: View {
+    @StateObject private var dishesViewModel = AppetizerDishesViewModel()
+    
     var body: some View {
         TabView {
-            AppetizersDishesView()
+            AppetizersDishesView(viewModel: dishesViewModel)
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
@@ -17,6 +19,9 @@ struct AppetizersTabView: View {
                 .tabItem {
                     Label("Order", systemImage: "bag")
                 }
+        }
+        .onAppear {
+            dishesViewModel.loadAppetizers()
         }
     }
 }

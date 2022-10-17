@@ -3,6 +3,7 @@ import SwiftUI
 struct AppetizersTabView: View {
     @StateObject private var dishesViewModel = AppetizerDishesViewModel()
     @StateObject private var accountViewModel = AccountViewModel()
+    @StateObject private var orderListViewModel = OrderListViewModel()
     
     var body: some View {
         TabView {
@@ -16,7 +17,7 @@ struct AppetizersTabView: View {
                     Label("Account", systemImage: "person")
                 }
 
-            OrderListView()
+            OrderListView(viewModel: orderListViewModel)
                 .tabItem {
                     Label("Order", systemImage: "bag")
                 }

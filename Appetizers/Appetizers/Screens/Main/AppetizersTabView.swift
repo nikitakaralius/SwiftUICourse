@@ -7,7 +7,9 @@ struct AppetizersTabView: View {
     
     var body: some View {
         TabView {
-            AppetizersDishesView(viewModel: dishesViewModel)
+            AppetizersDishesView(
+                viewModel: dishesViewModel,
+                orderList: orderListViewModel)
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }

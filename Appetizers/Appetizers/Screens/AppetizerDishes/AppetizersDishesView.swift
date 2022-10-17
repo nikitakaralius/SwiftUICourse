@@ -2,6 +2,7 @@ import SwiftUI
 
 struct AppetizersDishesView: View {
     @ObservedObject var viewModel: AppetizerDishesViewModel
+    let orderList: OrderList
     
     var body: some View {
         AppetizersLoader(isLoading: $viewModel.isLoading) {
@@ -23,7 +24,8 @@ struct AppetizersDishesView: View {
                 if viewModel.isShowingDetail {
                     AppetizerDetailView(
                         isShowing: $viewModel.isShowingDetail,
-                        appetizer: viewModel.selectedAppetizer)
+                        appetizer: viewModel.selectedAppetizer,
+                        orderList: orderList)
                 }
             }
         }
@@ -37,6 +39,8 @@ struct AppetizersDishesView: View {
 
 struct AppetizersDishesView_Previews: PreviewProvider {
     static var previews: some View {
-        AppetizersDishesView(viewModel: AppetizerDishesViewModel())
+        AppetizersDishesView(
+            viewModel: AppetizerDishesViewModel(),
+            orderList: OrderListViewModel())
     }
 }

@@ -1,23 +1,23 @@
 import SwiftUI
 
-protocol OrderList {
-    func add(appetizer: Appetizer)
-}
-
-final class OrderListViewModel: ObservableObject, OrderList {
+final class Order: ObservableObject {
     @Published var appetizers: [Appetizer] = []
-   
-    var hasAppetizers: Bool {
-        !appetizers.isEmpty
-    }
     
     var summary: Double {
         appetizers.reduce(0) { partialResult, appetizer in
             partialResult + appetizer.price
         }
     }
+   
+    var hasAppetizers: Bool {
+        !appetizers.isEmpty
+    }
     
-    func add(appetizer: Appetizer) {
+    func add(_ appetizer: Appetizer) {
         appetizers.append(appetizer)
+    }
+    
+    func remove(at offsets: IndexSet) {
+        appetizers.remove(atOffsets: offsets)
     }
 }

@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct OrderListView: View {
-    @ObservedObject var viewModel: OrderListViewModel
+    @EnvironmentObject var order: Order
     
     var body: some View {
         NavigationView {
             VStack {
-                if viewModel.hasAppetizers {
+                if order.hasAppetizers {
                     orderList
                 } else {
                     emptyState
@@ -20,7 +20,7 @@ struct OrderListView: View {
     private var orderList: some View {
         VStack {
             List {
-                let appetizers = Array(viewModel.appetizers.enumerated())
+                let appetizers = Array(order.appetizers.enumerated())
                 ForEach(appetizers, id: \.offset) { _, appetizer in
                     AppetizerCellView(appetizer: appetizer)
                 }
@@ -34,7 +34,7 @@ struct OrderListView: View {
                 
             } label: {
                 AppetizerButtonLabel(
-                    "$\(viewModel.summary.formatted()) - Place to Order",
+                    "$\(order.summary.formatted()) - Place to Order",
                     width: 320,
                     height: 50)
             }
@@ -58,18 +58,12 @@ struct OrderListView: View {
     }
     
     private func remoteAppetizer(at indexSet: IndexSet) {
-        viewModel.appetizers.remove(atOffsets: indexSet)
+        order.remove(at: indexSet)
     }
 }
 
 struct OrderListView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderListView(viewModel: viewModel)
-    }
-    
-    static var viewModel: OrderListViewModel {
-        let viewModel = OrderListViewModel()
-        viewModel.appetizers = [] // MockData.appetizers + MockData.appetizers
-        return viewModel
+        OrderListView()
     }
 }

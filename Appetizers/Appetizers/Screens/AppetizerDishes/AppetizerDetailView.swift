@@ -3,7 +3,6 @@ import SwiftUI
 struct AppetizerDetailView: View {
     @Binding var isShowing: Bool
     let appetizer: Appetizer
-    let orderList: OrderList
     
     var body: some View {
         VStack {
@@ -12,7 +11,7 @@ struct AppetizerDetailView: View {
                 .aspectRatio(contentMode: .fit)
             AppetizerDescription(appetizer: appetizer)
             Spacer()
-            OrderButton(for: appetizer, orderList: orderList)
+            OrderButton(for: appetizer)
         }
         .card()
         .withCloseButton(at: .topTrailing, controls: $isShowing)
@@ -78,17 +77,16 @@ fileprivate struct NutritionUnit: View {
 }
 
 fileprivate struct OrderButton: View {
+    @EnvironmentObject var order: Order
     private let appetizer: Appetizer
-    let orderList: OrderList
     
-    init(for appetizer: Appetizer, orderList: OrderList) {
+    init(for appetizer: Appetizer) {
         self.appetizer = appetizer
-        self.orderList = orderList
     }
     
     var body: some View {
         Button {
-            orderList.add(appetizer: appetizer)
+            order.add(appetizer)
         } label: {
             AppetizerButtonLabel("$\(appetizer.price.formatted()) -  Add to Order")
         }
@@ -120,7 +118,6 @@ fileprivate extension View {
 struct AppetizerDetailView_Previews: PreviewProvider {
     static var previews: some View {
         AppetizerDetailView(isShowing: .constant(true),
-                            appetizer: MockData.sampleAppetizer,
-                            orderList: OrderListViewModel())
+                            appetizer: MockData.sampleAppetizer)
     }
 }

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct AppetizersTabView: View {
     @StateObject private var dishesViewModel = AppetizerDishesViewModel()
+    @StateObject private var accountViewModel = AccountViewModel()
     
     var body: some View {
         TabView {
@@ -10,7 +11,7 @@ struct AppetizersTabView: View {
                     Label("Home", systemImage: "house")
                 }
             
-            AccountView()
+            AccountView(viewModel: accountViewModel)
                 .tabItem {
                     Label("Account", systemImage: "person")
                 }
@@ -22,6 +23,7 @@ struct AppetizersTabView: View {
         }
         .onAppear {
             dishesViewModel.loadAppetizers()
+            accountViewModel.retrieveUser()
         }
     }
 }

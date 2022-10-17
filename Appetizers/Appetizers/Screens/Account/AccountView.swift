@@ -1,18 +1,19 @@
 import SwiftUI
 
 struct AccountView: View {
-    @StateObject private var viewModel = AccountViewModel()
+    @ObservedObject var viewModel: AccountViewModel
     
     var body: some View {
         NavigationView {
             Form {
                 Section("Personal Information") {
-                    TextField("First Name", text: $viewModel.firstName)
-                    TextField("Last Name", text: $viewModel.lastName)
-                    TextField("Email", text: $viewModel.email)
+                    TextField("First Name", text: $viewModel.user.firstName)
+                    TextField("Last Name", text: $viewModel.user.lastName)
+                    TextField("Email", text: $viewModel.user.email)
                         .keyboardType(.emailAddress)
                         .autocorrectionDisabled()
-                    DatePicker("Birthdate", selection: $viewModel.birthdate, displayedComponents: .date)
+                        .textInputAutocapitalization(.never)
+                    DatePicker("Birthdate", selection: $viewModel.user.birthdate, displayedComponents: .date)
                     Button("Save Changes") {
                         DispatchQueue.main.async {
                             viewModel.saveChanges()
@@ -22,9 +23,9 @@ struct AccountView: View {
                 
                 Section("Requests") {
                     Toggle("Extra Napkins",
-                           isOn: $viewModel.areExtraNapkinsOn)
+                           isOn: $viewModel.user.areExtraNapkinsOn)
                     Toggle("Frequent Refills",
-                           isOn: $viewModel.areFrequentRefillsOn)
+                           isOn: $viewModel.user.areFrequentRefillsOn)
                 }
                 .tint(.brandPrimary)
             }
@@ -40,6 +41,6 @@ struct AccountView: View {
 
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView()
+        AccountView(viewModel: AccountViewModel())
     }
 }

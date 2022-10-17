@@ -24,7 +24,7 @@ struct OrderListView: View {
                 ForEach(appetizers, id: \.offset) { _, appetizer in
                     AppetizerCellView(appetizer: appetizer)
                 }
-                .onDelete(perform: remoteAppetizer)
+                .onDelete(perform: order.remove)
             }
             .listStyle(.plain)
             
@@ -55,10 +55,6 @@ struct OrderListView: View {
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
         }
-    }
-    
-    private func remoteAppetizer(at indexSet: IndexSet) {
-        order.remove(at: indexSet)
     }
 }
 

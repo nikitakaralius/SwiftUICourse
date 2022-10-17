@@ -6,6 +6,10 @@ protocol OrderList {
 
 final class OrderListViewModel: ObservableObject, OrderList {
     @Published var appetizers: [Appetizer] = []
+   
+    var hasAppetizers: Bool {
+        !appetizers.isEmpty
+    }
     
     var summary: Double {
         appetizers.reduce(0) { partialResult, appetizer in

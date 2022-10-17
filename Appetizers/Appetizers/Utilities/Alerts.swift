@@ -36,4 +36,14 @@ extension AlertDescription {
         title: Text("Invalid Email"),
         message: Text("Please ensure your email is correct."),
         dismissButton: .default(Text("OK")))
+   
+    static let userSaveSuccess = AlertDescription(
+        title: Text("Success"),
+        message: Text("Your profile is successfully saved."),
+        dismissButton: .default(Text("OK")))
+    
+    static let invalidUserData = AlertDescription(
+        title: Text("Profile Error"),
+        message: Text("There was an error saving or retrieving profile."),
+        dismissButton: .default(Text("OK")))
 }

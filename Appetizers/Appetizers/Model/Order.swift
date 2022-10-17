@@ -4,9 +4,7 @@ final class Order: ObservableObject {
     @Published var appetizers: [Appetizer] = []
     
     var summary: Double {
-        appetizers.reduce(0) { partialResult, appetizer in
-            partialResult + appetizer.price
-        }
+        appetizers.reduce(0) { $0 + $1.price }
     }
    
     var hasAppetizers: Bool {

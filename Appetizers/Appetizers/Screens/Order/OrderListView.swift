@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct OrderView: View {
+struct OrderListView: View {
     var body: some View {
         NavigationView {
             Text("Order View")
@@ -9,8 +9,8 @@ struct OrderView: View {
     }
 }
 
-struct OrderView_Previews: PreviewProvider {
+struct OrderListView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderView()
+        OrderListView()
     }
 }

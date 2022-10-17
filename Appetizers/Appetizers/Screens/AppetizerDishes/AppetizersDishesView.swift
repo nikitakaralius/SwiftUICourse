@@ -10,7 +10,9 @@ struct AppetizersDishesView: View {
                     List(viewModel.appetizers) { appetizer in
                         AppetizerCellView(appetizer: appetizer)
                             .onTapGesture {
-                                viewModel.selectedAppetizer = appetizer
+                                withAnimation() {
+                                    viewModel.selectedAppetizer = appetizer
+                                }
                             }
                     }
                     .listStyle(.plain)
@@ -37,7 +39,12 @@ struct AppetizersDishesView: View {
 
 struct AppetizersDishesView_Previews: PreviewProvider {
     static var previews: some View {
-        AppetizersDishesView(
-            viewModel: AppetizerDishesViewModel())
+        AppetizersDishesView(viewModel: viewModel)
+    }
+    
+    static var viewModel: AppetizerDishesViewModel {
+        let viewModel = AppetizerDishesViewModel()
+        viewModel.appetizers = MockData.appetizers
+        return viewModel
     }
 }

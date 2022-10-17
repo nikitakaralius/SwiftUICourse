@@ -106,7 +106,9 @@ fileprivate extension View {
     func withCloseButton(at alignment: Alignment, controls isShowing: Binding<Bool>) -> some View {
         return self.overlay(alignment: .topTrailing) {
             Button {
-                isShowing.wrappedValue = false
+                withAnimation {
+                    isShowing.wrappedValue = false
+                }
             } label: {
                 CloseButtonLabel()
             }

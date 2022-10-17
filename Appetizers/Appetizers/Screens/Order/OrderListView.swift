@@ -6,9 +6,15 @@ struct OrderListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List(viewModel.appetizers, rowContent: { appetizer in
-                    AppetizerCellView(appetizer: appetizer)
-                })
+                List {
+                    let appetizers = Array(viewModel.appetizers.enumerated())
+                    ForEach(appetizers, id: \.offset) { _, appetizer in
+                        AppetizerCellView(appetizer: appetizer)
+                    }
+                    .onDelete { offset in
+                        viewModel.appetizers.remove(atOffsets: offset)
+                    }
+                }
                 .listStyle(.plain)
 
                 Spacer()

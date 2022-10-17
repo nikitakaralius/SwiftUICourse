@@ -1,8 +1,8 @@
 import Foundation
 
 extension Date {
-    var eighteenYearsAgo: Date {
-        Calendar.current.date(byAdding: .year, value: -18, to: Date.now)!
+    var fourteenYearsAgo: Date {
+        Calendar.current.date(byAdding: .year, value: -14, to: Date.now)!
     }
     
     var oneHundredTenYearsAgo: Date {

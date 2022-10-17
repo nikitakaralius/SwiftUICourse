@@ -23,3 +23,17 @@ extension AlertDescription {
         message: Text("The data received from the server was invalid. Please contact support."),
         dismissButton: .default(Text("OK")))
 }
+
+extension AlertDescription {
+    static func emptyField(required field: String) -> AlertDescription {
+        AlertDescription(
+            title: Text("Empty field"),
+            message: Text("Please ensure \(field) field in the form has been filled out."),
+            dismissButton: .default(Text("OK")))
+    }
+    
+    static let invalidEmail = AlertDescription(
+        title: Text("Invalid Email"),
+        message: Text("Please ensure your email is correct."),
+        dismissButton: .default(Text("OK")))
+}

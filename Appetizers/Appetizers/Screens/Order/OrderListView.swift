@@ -39,8 +39,8 @@ struct OrderListView: View {
                     "$\(viewModel.summary.formatted()) - Place to Order",
                     width: 320,
                     height: 50)
-                .padding()
             }
+            .padding(.bottom, 25)
         }
     }
 }

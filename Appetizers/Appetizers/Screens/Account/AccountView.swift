@@ -14,7 +14,9 @@ struct AccountView: View {
                         .autocorrectionDisabled()
                     DatePicker("Birthdate", selection: $viewModel.birthdate, displayedComponents: .date)
                     Button("Save Changes") {
-                        
+                        DispatchQueue.main.async {
+                            viewModel.saveChanges()
+                        }
                     }
                 }
                 
@@ -27,6 +29,11 @@ struct AccountView: View {
                 .tint(.brandPrimary)
             }
             .navigationTitle("🧑🏼 Account")
+        }
+        .alert(item: $viewModel.alertDescription) { alertItem in
+            Alert(title: alertItem.title,
+                  message: alertItem.message,
+                  dismissButton: alertItem.dismissButton)
         }
     }
 }

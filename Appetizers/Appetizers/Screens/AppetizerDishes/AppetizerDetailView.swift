@@ -11,7 +11,8 @@ struct AppetizerDetailView: View {
                 .aspectRatio(contentMode: .fit)
             AppetizerDescription(appetizer: appetizer)
             Spacer()
-            OrderButton(for: appetizer)
+            OrderButton(isShowingDetailView: $isShowing,
+                        appetizer: appetizer)
         }
         .card()
         .withCloseButton(at: .topTrailing, controls: $isShowing)
@@ -78,15 +79,13 @@ fileprivate struct NutritionUnit: View {
 
 fileprivate struct OrderButton: View {
     @EnvironmentObject var order: Order
-    private let appetizer: Appetizer
-    
-    init(for appetizer: Appetizer) {
-        self.appetizer = appetizer
-    }
+    @Binding var isShowingDetailView: Bool
+    let appetizer: Appetizer
     
     var body: some View {
         Button {
             order.add(appetizer)
+            isShowingDetailView = false
         } label: {
             AppetizerButtonLabel("$\(appetizer.price.formatted()) -  Add to Order")
         }

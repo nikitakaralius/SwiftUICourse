@@ -46,6 +46,7 @@ struct OrderListView: View {
         VStack {
             Image("list")
                 .resizable()
+                .scaledToFit()
                 .frame(width: 120, height: 120)
                 .padding()
             Text("You have no items in your order")

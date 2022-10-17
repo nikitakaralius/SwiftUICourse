@@ -84,7 +84,6 @@
 			children = (
 				85AA3E6B28F9BAE4001A1EC4 /* AppetizersDishesView.swift */,
 				853DA92528FB278800091CDE /* AppetizerDishesViewModel.swift */,
-				85606EE328F9DFD20099609C /* AppetizerCellView.swift */,
 				858A24E128FBF7A40004E3D3 /* AppetizerRemoteImage.swift */,
 				85EA83D628FC06F0006498B3 /* AppetizerDetailView.swift */,
 			);
@@ -112,6 +111,7 @@
 		85606EE228F9DFB50099609C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				859AD92528FD8469001FDD9F /* Cells */,
 				85EA83DE28FC34F9006498B3 /* Buttons */,
 				85EA83DF28FC350F006498B3 /* Progress */,
 			);
@@ -150,6 +150,14 @@
 				859AD92128FD6DA3001FDD9F /* String.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		859AD92528FD8469001FDD9F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				85606EE328F9DFD20099609C /* AppetizerCellView.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		85AA3E5128F9B994001A1EC4 = {

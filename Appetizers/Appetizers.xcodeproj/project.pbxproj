@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8525B67C28FC9C06000DAEB0 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8525B67B28FC9C06000DAEB0 /* AccountViewModel.swift */; };
 		853DA92128FAF02A00091CDE /* AppetizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DA92028FAF02A00091CDE /* AppetizerService.swift */; };
 		853DA92328FAF58200091CDE /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DA92228FAF58200091CDE /* Endpoints.swift */; };
 		853DA92628FB278800091CDE /* AppetizerDishesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DA92528FB278800091CDE /* AppetizerDishesViewModel.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8525B67B28FC9C06000DAEB0 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		853DA92028FAF02A00091CDE /* AppetizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerService.swift; sourceTree = "<group>"; };
 		853DA92228FAF58200091CDE /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		853DA92528FB278800091CDE /* AppetizerDishesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerDishesViewModel.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		858A24E328FBFC920004E3D3 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				8525B67B28FC9C06000DAEB0 /* AccountViewModel.swift */,
 				85AA3E6E28F9BB25001A1EC4 /* AccountView.swift */,
 			);
 			path = Account;
@@ -283,6 +286,7 @@
 				85EA83D928FC118D006498B3 /* AppetizerButtonLabel.swift in Sources */,
 				853DA92328FAF58200091CDE /* Endpoints.swift in Sources */,
 				85606EE428F9DFD20099609C /* AppetizerCellView.swift in Sources */,
+				8525B67C28FC9C06000DAEB0 /* AccountViewModel.swift in Sources */,
 				85AA3E6C28F9BAE4001A1EC4 /* AppetizersDishesView.swift in Sources */,
 				85EA83D728FC06F0006498B3 /* AppetizerDetailView.swift in Sources */,
 				85AA3E5E28F9B994001A1EC4 /* AppetizersApp.swift in Sources */,

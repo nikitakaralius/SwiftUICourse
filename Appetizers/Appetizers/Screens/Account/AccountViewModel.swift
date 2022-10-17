@@ -1,8 +1,10 @@
-//
-//  AccountViewModel.swift
-//  Appetizers
-//
-//  Created by Nikita Karalius on 16.10.2022.
-//
+import SwiftUI
 
-import Foundation
+final class AccountViewModel: ObservableObject {
+    @Published var firstName = ""
+    @Published var lastName = ""
+    @Published var email = ""
+    @Published var birthdate = Date.now
+    @Published var areExtraNapkinsOn = false
+    @Published var areFrequentRefillsOn = false
+}
